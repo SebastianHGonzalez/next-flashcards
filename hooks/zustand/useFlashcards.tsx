@@ -24,7 +24,12 @@ export const useFlashcards = create<FlashcardsStore>()(
       (set, get) => ({
         flashcards: [],
         add: (flashcard) => {
-          const newFlashcard = createFlashcardSchema.parse(flashcard);
+          const newFlashcard = createFlashcardSchema.safeParse(flashcard).data;
+
+          if (!newFlashcard) {
+            // TODO: handle error
+            return;
+          }
 
           set((state) => ({
             flashcards: [
@@ -34,12 +39,20 @@ export const useFlashcards = create<FlashcardsStore>()(
           }));
         },
         update: (flashcard) => {
-          const updatedFlashcard = updateFlashcardSchema.parse(flashcard);
+          const updatedFlashcard =
+            updateFlashcardSchema.safeParse(flashcard).data;
+
+          if (!updatedFlashcard) {
+            // TODO: handle error
+            return;
+          }
+
           const existingFlashcard = get().flashcards.find(
             (f) => f.id === updatedFlashcard.id
           );
           if (!existingFlashcard) {
-            throw new Error("Flashcard not found");
+            // TODO: handle error
+            return;
           }
 
           set((state) => ({
@@ -49,8 +62,14 @@ export const useFlashcards = create<FlashcardsStore>()(
           }));
         },
         delete: (flashcard) => {
-          const deletedFlashcard = deleteFlashcardSchema.parse(flashcard);
-          
+          const deletedFlashcard =
+            deleteFlashcardSchema.safeParse(flashcard).data;
+
+          if (!deletedFlashcard) {
+            // TODO: handle error
+            return;
+          }
+
           set((state) => ({
             flashcards: state.flashcards.filter(
               (f) => f.id !== deletedFlashcard.id
