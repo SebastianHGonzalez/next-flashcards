@@ -1,6 +1,3 @@
-import { Input } from "./input";
-import { Button } from "./button";
-import { PencilIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface EditableTextProps {

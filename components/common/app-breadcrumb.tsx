@@ -1,11 +1,10 @@
 import Link from "next/link";
-import { Fragment } from "react";
 import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbSeparator,
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    BreadcrumbList,
+    BreadcrumbSeparator,
 } from "./breadcrumb";
 import { SidebarTrigger } from "./sidebar";
 
