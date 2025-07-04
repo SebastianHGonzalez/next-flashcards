@@ -28,7 +28,7 @@ export function EditableText({
         onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
           onEdit(e.target.value);
         }}
-        onBlur={() => onEditCancel()}
+        onBlur={() => onEditEnd(text.trim())}
         rows={1}
         ref={el => {
           if (el) {
