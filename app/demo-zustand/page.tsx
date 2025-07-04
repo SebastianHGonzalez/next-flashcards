@@ -1,20 +1,21 @@
 "use client";
 
-import { useState } from "react";
 import { SearchInput } from "@/components/common/search-input";
 import { Flashcard } from "@/components/flashcard/flashcard";
 import {
-  FlashList,
-  FlashListContainer,
-  FlashcardListItem,
+    FlashList,
+    FlashListContainer,
+    FlashcardListItem,
 } from "@/components/flashcard/flashcard-list";
 import { NewFlashcard } from "@/components/flashcard/new-flashcard";
 import { useFlashcards } from "@/hooks/zustand/useFlashcards";
 import { AppBreadcrumb } from "@/components/common/app-breadcrumb";
+import { Alert, AlertDescription, AlertTitle } from "@/components/common/alert";
+import { AlertCircle } from "lucide-react";
+import { Text } from "@/components/common/text";
 
 export default function DemoZustand() {
-  const flashcardStore = useFlashcards();
-  const [textFilter, setTextFilter] = useState("");
+  const store = useFlashcards();
 
   return (
     <div className="p-4 w-full">
@@ -22,25 +23,41 @@ export default function DemoZustand() {
         routes={[{ href: "/demo-zustand", label: "Demo Zustand" }]}
       />
 
-      <FlashListContainer>
+      <Text variant="heading" asChild>
+        <h1>Flashcards</h1>
+      </Text>
+      <Text variant="subheading">
+        Demo page with Zustand store.
+      </Text>
+
+      <FlashListContainer className="mt-4">
         <SearchInput
           id="text-filter"
-          value={textFilter}
-          onChange={(e) => setTextFilter(e.target.value)}
+          placeholder="Search flashcards"
+          value={store.textFilter}
+          onChange={(e) => store.setTextFilter(e.target.value)}
         />
 
+        {store.error && (
+          <Alert variant="destructive">
+            <AlertCircle />
+            <AlertTitle>Heads up!</AlertTitle>
+            <AlertDescription>{store.error}</AlertDescription>
+          </Alert>
+        )}
+
         <FlashList>
-          {flashcardStore.flashcards.map((flashcard) => (
+          {store.flashcards.map((flashcard) => (
             <FlashcardListItem key={flashcard.id}>
               <Flashcard
                 flashcard={flashcard}
-                onUpdate={flashcardStore.update}
-                onDelete={flashcardStore.delete}
+                onUpdate={store.updateFlashcard}
+                onDelete={store.deleteFlashcard}
               />
             </FlashcardListItem>
           ))}
-          <FlashcardListItem className="col-span-full">
-            <NewFlashcard onAdd={flashcardStore.add} />
+          <FlashcardListItem>
+            <NewFlashcard onAdd={store.addFlashcard} />
           </FlashcardListItem>
         </FlashList>
       </FlashListContainer>
