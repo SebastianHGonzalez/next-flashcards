@@ -19,3 +19,17 @@ export type UpdateFlashcard = z.infer<typeof updateFlashcardSchema>;
 export const deleteFlashcardSchema = flashcardDetailsSchema.pick({ id: true });
 
 export type DeleteFlashcard = z.infer<typeof deleteFlashcardSchema>;
+
+export type FlashcardsStore = {
+    allFlashcards: FlashcardDetails[];
+    flashcards: FlashcardDetails[];
+    loading: boolean;
+    error: string | null;
+
+    addFlashcard: (flashcard: CreateFlashcard) => Promise<void>;
+    updateFlashcard: (flashcard: UpdateFlashcard) => Promise<void>;
+    deleteFlashcard: (flashcard: DeleteFlashcard) => Promise<void>;
+
+    setTextFilter: (text: string) => void;
+    textFilter: string;
+};
