@@ -1,23 +1,59 @@
+import { cn } from "@/lib/utils";
+import { Slot } from "@radix-ui/react-slot";
 
+export function FlashListContainer({
+  children,
+  className,
+  asChild,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  asChild?: boolean;
+}) {
+  const Component = asChild ? Slot : "div";
 
-export function FlashListContainer({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex flex-col gap-4">{children}</div>
+    <Component className={cn("flex flex-col gap-4", className)}>
+      {children}
+    </Component>
   );
 }
 
-export function FlashList({ children }: { children: React.ReactNode }) {
+export function FlashList({
+  children,
+  className,
+  asChild,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  asChild?: boolean;
+}) {
+  const Component = asChild ? Slot : "ul";
+
   return (
-    <ul className="flex flex-wrap gap-4">
+    <Component
+      className={cn(
+        `grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]`,
+        className
+      )}
+    >
       {children}
-    </ul>
+    </Component>
   );
 }
 
-export function FlashcardListItem({ children }: { children: React.ReactNode }) {
+export function FlashcardListItem({
+  children,
+  className,
+  asChild,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  asChild?: boolean;
+}) {
+  const Component = asChild ? Slot : "li";
+
   return (
-    <li className="flex-grow-1 flex-shrink-0 basis-[300px] max-w-[600px] w-full min-h-[100px] min-w-[300px]">
-      {children}
-    </li>
+    <Component className={cn(className)}>{children}</Component>
   );
 }

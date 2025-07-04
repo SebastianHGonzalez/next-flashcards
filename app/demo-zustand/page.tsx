@@ -4,9 +4,9 @@ import { useState } from "react";
 import { SearchInput } from "@/components/common/search-input";
 import { Flashcard } from "@/components/flashcard/flashcard";
 import {
-    FlashList,
-    FlashListContainer,
-    FlashcardListItem,
+  FlashList,
+  FlashListContainer,
+  FlashcardListItem,
 } from "@/components/flashcard/flashcard-list";
 import { NewFlashcard } from "@/components/flashcard/new-flashcard";
 import { useFlashcards } from "@/hooks/zustand/useFlashcards";
@@ -18,7 +18,9 @@ export default function DemoZustand() {
 
   return (
     <div className="p-4 w-full">
-      <AppBreadcrumb routes={[{ href: "/demo-zustand", label: "Demo Zustand" }]} />
+      <AppBreadcrumb
+        routes={[{ href: "/demo-zustand", label: "Demo Zustand" }]}
+      />
 
       <FlashListContainer>
         <SearchInput
@@ -37,7 +39,7 @@ export default function DemoZustand() {
               />
             </FlashcardListItem>
           ))}
-          <FlashcardListItem>
+          <FlashcardListItem className="col-span-full">
             <NewFlashcard onAdd={flashcardStore.add} />
           </FlashcardListItem>
         </FlashList>
