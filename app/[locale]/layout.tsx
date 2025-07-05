@@ -20,7 +20,7 @@ export default async function LocaleLayout({
     <NextIntlClientProvider>
       <SidebarProvider>
         <AppSidebar />
-        <main className="w-full">{children}</main>
+        <main className="w-full max-w-6xl">{children}</main>
       </SidebarProvider>
     </NextIntlClientProvider>
   );

@@ -7,7 +7,9 @@ const textVariants = cva("text-sm text-muted-foreground", {
     variant: {
       heading: "text-2xl font-bold text-foreground mt-4",
       subheading: "text-lg font-semibold text-muted-foreground",
-      default: "text-sm text-muted-foreground mt-2",
+      default: "text-sm text-foreground mt-2",
+      body: "text-sm text-foreground",
+      bodyMuted: "text-sm text-muted-foreground",
     },
   },
 });

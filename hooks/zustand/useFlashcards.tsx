@@ -12,6 +12,7 @@ const useFlashcardsStore = create<FlashcardsStore>()(
     persist(
       (set, get) => ({
         allFlashcards: [],
+        flashcardsCount: 0,
         flashcards: [],
         loading: true,
         error: null,
@@ -113,5 +114,6 @@ export function useFlashcards() {
   return {
     ...store,
     flashcards,
+    flashcardsCount: store.allFlashcards.length,
   };
 }

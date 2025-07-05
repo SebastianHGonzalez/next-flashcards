@@ -22,6 +22,7 @@ export type DeleteFlashcard = z.infer<typeof deleteFlashcardSchema>;
 
 export type FlashcardsStore = {
     allFlashcards: FlashcardDetails[];
+    flashcardsCount: number;
     flashcards: FlashcardDetails[];
     loading: boolean;
     error: string | null;

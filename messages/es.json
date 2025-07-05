@@ -30,7 +30,16 @@
     "deleteConfirm": "¿Estás seguro de que quieres eliminar esta tarjeta?",
     "noCards": "No hay tarjetas de memoria",
     "noCardsDescription": "Comienza agregando tu primera tarjeta de memoria.",
-    "welcome": "Bienvenido a la aplicación de tarjetas de memoria. Esta aplicación te permite crear, editar y gestionar tus tarjetas de memoria para el aprendizaje."
+    "welcome": "Bienvenido a la aplicación de tarjetas de memoria. Esta aplicación te permite crear, editar y gestionar tus tarjetas de memoria para el aprendizaje.",
+    "emptyState": {
+      "title": "No hay tarjetas de memoria",
+      "description": "Comienza agregando tu primera tarjeta de memoria."
+    },
+    "noMatches": {
+      "title": "No hay coincidencias",
+      "description": "No se encontraron tarjetas de memoria."
+    },
+    "clearFilters": "Limpiar filtros"
   },
   "alerts": {
     "headsUp": "¡Atención!",

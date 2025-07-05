@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 
 interface NewFlashcardProps {
+  className?: string;
   onAdd: (flashcard: CreateFlashcard) => void;
 }
 
@@ -21,13 +22,14 @@ const colorOptions = [
   "#D4A5A5",
 ];
 
-export function NewFlashcard({ onAdd }: NewFlashcardProps) {
+export function NewFlashcard({ onAdd, className }: NewFlashcardProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [front, setFront] = useState("");
   const t = useTranslations();
 
   return (
     <FlashcardBase
+      className={className}
       front={
         isEditing ? (
           <EditableText

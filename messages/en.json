@@ -30,7 +30,16 @@
     "deleteConfirm": "Are you sure you want to delete this card?",
     "noCards": "No flashcards",
     "noCardsDescription": "Start by adding your first flashcard.",
-    "welcome": "Welcome to the flashcard application. This application allows you to create, edit and manage your flashcards for learning."
+    "welcome": "Welcome to the flashcard application. This application allows you to create, edit and manage your flashcards for learning.",
+    "emptyState": {
+      "title": "No flashcards",
+      "description": "Start by adding your first flashcard."
+    },
+    "noMatches": {
+      "title": "No matches",
+      "description": "No flashcards found."
+    },
+    "clearFilters": "Clear filters"
   },
   "alerts": {
     "headsUp": "Heads up!",
