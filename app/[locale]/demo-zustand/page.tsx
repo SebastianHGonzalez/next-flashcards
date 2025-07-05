@@ -81,7 +81,7 @@ export default function DemoZustand() {
           <FlashcardListNoMatches>
             <Button
               variant="outline"
-              size="sm"
+              className="w-full"
               onClick={() => store.setTextFilter("")}
             >
               {t("flashcards.clearFilters")}
