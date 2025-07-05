@@ -2,7 +2,7 @@
 
 ## Demo
 
-https://next-flashcards-beta.vercel.app/
+https://next-flashcards-beta.vercel.app/es/demo-zustand
 
 ## Development
 
