@@ -1,11 +1,12 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { SearchInput } from "@/components/common/search-input";
 import { Flashcard } from "@/components/flashcard/flashcard";
 import {
-    FlashList,
-    FlashListContainer,
-    FlashcardListItem,
+  FlashList,
+  FlashListContainer,
+  FlashcardListItem,
 } from "@/components/flashcard/flashcard-list";
 import { NewFlashcard } from "@/components/flashcard/new-flashcard";
 import { useFlashcards } from "@/hooks/zustand/useFlashcards";
@@ -16,24 +17,23 @@ import { Text } from "@/components/common/text";
 
 export default function DemoZustand() {
   const store = useFlashcards();
+  const t = useTranslations();
 
   return (
     <div className="p-4 w-full">
       <AppBreadcrumb
-        routes={[{ href: "/demo-zustand", label: "Demo Zustand" }]}
+        routes={[{ href: "/demo-zustand", label: t("navigation.demoZustand") }]}
       />
 
       <Text variant="heading" asChild>
-        <h1>Flashcards</h1>
+        <h1>{t("flashcards.title")}</h1>
       </Text>
-      <Text variant="subheading">
-        Demo page with Zustand store.
-      </Text>
+      <Text variant="subheading">{t("flashcards.subtitle")}</Text>
 
       <FlashListContainer className="mt-4">
         <SearchInput
           id="text-filter"
-          placeholder="Search flashcards"
+          placeholder={t("common.searchPlaceholder")}
           value={store.textFilter}
           onChange={(e) => store.setTextFilter(e.target.value)}
         />
@@ -41,7 +41,7 @@ export default function DemoZustand() {
         {store.error && (
           <Alert variant="destructive">
             <AlertCircle />
-            <AlertTitle>Heads up!</AlertTitle>
+            <AlertTitle>{t("alerts.headsUp")}</AlertTitle>
             <AlertDescription>{store.error}</AlertDescription>
           </Alert>
         )}

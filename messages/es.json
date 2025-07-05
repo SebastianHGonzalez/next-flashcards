@@ -1,0 +1,50 @@
+{
+  "navigation": {
+    "demoZustand": "Demo Zustand",
+    "flashcards": "Tarjetas de Memoria"
+  },
+  "common": {
+    "search": "Buscar",
+    "searchPlaceholder": "Buscar tarjetas de memoria",
+    "add": "Agregar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "close": "Cerrar",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "warning": "Advertencia",
+    "info": "Información"
+  },
+  "flashcards": {
+    "title": "Tarjetas de Memoria",
+    "subtitle": "Página de demostración con store Zustand.",
+    "newCard": "Nueva tarjeta",
+    "addNewCard": "Agregar nueva tarjeta",
+    "frontSide": "Frente",
+    "backSide": "Reverso",
+    "editCard": "Editar tarjeta",
+    "deleteCard": "Eliminar tarjeta",
+    "deleteConfirm": "¿Estás seguro de que quieres eliminar esta tarjeta?",
+    "noCards": "No hay tarjetas de memoria",
+    "noCardsDescription": "Comienza agregando tu primera tarjeta de memoria.",
+    "welcome": "Bienvenido a la aplicación de tarjetas de memoria. Esta aplicación te permite crear, editar y gestionar tus tarjetas de memoria para el aprendizaje."
+  },
+  "alerts": {
+    "headsUp": "¡Atención!",
+    "errorOccurred": "Ha ocurrido un error",
+    "cardAdded": "Tarjeta agregada exitosamente",
+    "cardUpdated": "Tarjeta actualizada exitosamente",
+    "cardDeleted": "Tarjeta eliminada exitosamente"
+  },
+  "sidebar": {
+    "title": "Barra lateral",
+    "description": "Muestra la barra lateral móvil."
+  },
+  "metadata": {
+    "title": "Tarjetas de Memoria",
+    "description": "Aplicación de tarjetas de memoria con Next.js y Zustand"
+  }
+} 

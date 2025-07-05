@@ -2,6 +2,7 @@ import { CreateFlashcard } from "@/model/flashcard";
 import { EditableText } from "@/components/common/editable-text";
 import { FlashcardBase } from "./flashcard-base";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface NewFlashcardProps {
   onAdd: (flashcard: CreateFlashcard) => void;
@@ -23,31 +24,33 @@ const colorOptions = [
 export function NewFlashcard({ onAdd }: NewFlashcardProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [front, setFront] = useState("");
+  const t = useTranslations();
 
   return (
     <FlashcardBase
       front={
         isEditing ? (
-        <EditableText
-          text={front}
-          isEditing={isEditing}
-          onEditStart={() => setIsEditing(true)}
-          onEdit={(text) => setFront(text)}
-          onEditEnd={(text) => {
-            if (!text) return;
+          <EditableText
+            text={front}
+            isEditing={isEditing}
+            onEditStart={() => setIsEditing(true)}
+            onEdit={(text) => setFront(text)}
+            onEditEnd={(text) => {
+              if (!text) return;
 
-            const randomColor = colorOptions[Math.floor(Math.random() * colorOptions.length)];
-            onAdd({ front: text, frontColor: randomColor });
-            setIsEditing(false);
-            setFront("");
-          }}
-          onEditCancel={() => setIsEditing(false)}
-        />
+              const randomColor =
+                colorOptions[Math.floor(Math.random() * colorOptions.length)];
+              onAdd({ front: text, frontColor: randomColor });
+              setIsEditing(false);
+              setFront("");
+            }}
+            onEditCancel={() => setIsEditing(false)}
+          />
         ) : (
           <button
             onClick={() => setIsEditing(true)}
             className="flex items-center h-full justify-center w-full h-32 bg-accent/30 hover:bg-accent/50 transition-all rounded-md border-2 border-dashed border-accent text-accent-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
-            aria-label="Add new flashcard"
+            aria-label={t("flashcards.addNewCard")}
             type="button"
           >
             <svg
@@ -58,7 +61,11 @@ export function NewFlashcard({ onAdd }: NewFlashcardProps) {
               stroke="currentColor"
               strokeWidth={2}
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 4v16m8-8H4"
+              />
             </svg>
           </button>
         )

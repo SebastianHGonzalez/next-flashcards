@@ -1,10 +1,10 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import {
-    Breadcrumb,
-    BreadcrumbItem,
-    BreadcrumbLink,
-    BreadcrumbList,
-    BreadcrumbSeparator,
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator,
 } from "./breadcrumb";
 import { SidebarTrigger } from "./sidebar";
 
