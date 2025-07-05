@@ -1,3 +1,5 @@
+"use client";
+
 import { CreateFlashcard } from "@/model/flashcard";
 import { EditableText } from "@/components/common/editable-text";
 import { FlashcardBase } from "./flashcard-base";

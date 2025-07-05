@@ -36,7 +36,7 @@
     "noMatches": {
       "title": "No matches",
       "description": "No flashcards found."
-    },
+    }
   },
   "newFlashcard": {
     "placeholder": "What are you thinking?",
@@ -65,4 +65,4 @@
     "title": "Flashcards",
     "description": "Flashcard application with Next.js and Zustand"
   }
-} 
+}
