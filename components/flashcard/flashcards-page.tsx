@@ -15,14 +15,14 @@ import { Button } from "@/components/common/button";
 import { FlashcardsStore } from "@/model/flashcard";
 
 export function FlashcardsPage({ store }: { store: FlashcardsStore }) {
-  const t = useTranslations();
+  const t = useTranslations("flashcards-page");
 
   return (
     <>
       <SearchInput
         className="mt-6"
         id="text-filter"
-        placeholder={t("common.searchPlaceholder")}
+        placeholder={t("search.placeholder")}
         value={store.textFilter}
         onChange={(e) => store.setTextFilter(e.target.value)}
       />
@@ -70,7 +70,7 @@ export function FlashcardsPage({ store }: { store: FlashcardsStore }) {
               className="w-full"
               onClick={() => store.setTextFilter("")}
             >
-              {t("flashcards.clearFilters")}
+              {t("clearFilters")}
             </Button>
           </FlashcardListNoMatches>
         )}

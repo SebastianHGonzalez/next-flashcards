@@ -7,7 +7,7 @@ import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
 import { useMemo } from "react";
 
-const useFlashcardsStore = create<FlashcardsStore>()(
+export const useFlashcardsStore = create<FlashcardsStore>()(
   devtools(
     persist(
       (set, get) => ({

@@ -1,8 +1,9 @@
+import { cn } from "@/lib/utils";
+import { TrashIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { ReactNode } from "react";
 import { Button } from "../common/button";
-import { TrashIcon } from "lucide-react";
 import { Card } from "../common/card";
-import { cn } from "@/lib/utils";
 interface FlashcardBaseProps {
   front: ReactNode;
   frontColor?: string;
@@ -16,6 +17,8 @@ export function FlashcardBase({
   onDelete,
   className,
 }: FlashcardBaseProps) {
+  const t = useTranslations("flashcard-base");
+
   return (
     <Card
       className={cn("h-full p-4 overflow-hidden relative", className)}
@@ -29,6 +32,8 @@ export function FlashcardBase({
           size="icon"
           onClick={onDelete}
           className="absolute bottom-2 right-2"
+          title={t("delete")}
+          aria-label={t("delete")}
         >
           <TrashIcon className="w-4 h-4" />
         </Button>

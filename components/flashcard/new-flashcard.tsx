@@ -25,7 +25,7 @@ const colorOptions = [
 export function NewFlashcard({ onAdd, className }: NewFlashcardProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [front, setFront] = useState("");
-  const t = useTranslations();
+  const t = useTranslations("newFlashcard");
 
   return (
     <FlashcardBase
@@ -33,6 +33,7 @@ export function NewFlashcard({ onAdd, className }: NewFlashcardProps) {
       front={
         isEditing ? (
           <EditableText
+            placeholder={t("placeholder")}
             text={front}
             isEditing={isEditing}
             onEditStart={() => setIsEditing(true)}
@@ -52,7 +53,8 @@ export function NewFlashcard({ onAdd, className }: NewFlashcardProps) {
           <button
             onClick={() => setIsEditing(true)}
             className="flex items-center h-full justify-center w-full h-32 bg-accent/30 hover:bg-accent/50 transition-all rounded-md border-2 border-dashed border-accent text-accent-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
-            aria-label={t("flashcards.addNewCard")}
+            aria-label={t("addNewCard")}
+            title={t("addNewCard")}
             type="button"
           >
             <svg

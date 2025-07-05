@@ -7,6 +7,7 @@ interface EditableTextProps {
   onEdit: (text: string) => void;
   onEditEnd: (text: string) => void;
   onEditCancel: () => void;
+  placeholder?: string;
 }
 
 export function EditableText({
@@ -16,6 +17,7 @@ export function EditableText({
   onEdit,
   onEditEnd,
   onEditCancel,
+  placeholder,
 }: EditableTextProps) {
   const className = "text-2xl block w-full dark:hover:bg-accent/50 m-0 text-left font-semibold w-full whitespace-normal break-words overflow-hidden text-wrap text-gray-800 mb-2 bg-transparent border-none focus:ring-0 outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-400 p-0 cursor-text rounded-md";
 
@@ -23,6 +25,7 @@ export function EditableText({
     return (
       <textarea
         autoFocus
+        placeholder={placeholder}
         value={text}
         className={cn(className, "bg-accent/50 resize-none")}
         onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
