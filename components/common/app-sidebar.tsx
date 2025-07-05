@@ -27,13 +27,13 @@ export function AppSidebar() {
           <SidebarMenuButton asChild isActive={pathname === "/"}>
             <Link href="/">
               <Home className="w-4 h-4" />
-              {t("navigation.flashcards")}
+              {t("navigation.home")}
             </Link>
           </SidebarMenuButton>
-          <SidebarMenuButton asChild isActive={pathname === "/demo-zustand"}>
-            <Link href="/demo-zustand">
+          <SidebarMenuButton asChild isActive={pathname === "/thoughts"}>
+            <Link href="/thoughts">
               <CreditCard className="w-4 h-4" />
-              {t("navigation.demoZustand")}
+              {t("navigation.thoughts")}
             </Link>
           </SidebarMenuButton>
         </SidebarMenu>

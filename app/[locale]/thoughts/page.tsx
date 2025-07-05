@@ -6,14 +6,14 @@ import { AppBreadcrumb } from "@/components/common/app-breadcrumb";
 import { Text } from "@/components/common/text";
 import { FlashcardsPage } from "@/components/flashcard/flashcards-page";
 
-export default function DemoZustand() {
+export default function ThoughtsPage() {
   const store = useFlashcards();
   const t = useTranslations();
 
   return (
     <div className="p-4 w-full">
       <AppBreadcrumb
-        routes={[{ href: "/demo-zustand", label: t("navigation.demoZustand") }]}
+        routes={[{ href: "/thoughts", label: t("navigation.thoughts") }]}
       />
 
       <Text variant="heading" asChild>

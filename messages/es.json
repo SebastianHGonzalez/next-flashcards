@@ -1,7 +1,7 @@
 {
   "navigation": {
-    "demoZustand": "Demo Zustand",
-    "flashcards": "Tarjetas de Memoria"
+    "thoughts": "Pensamientos",
+    "home": "Inicio"
   },
   "common": {
     "search": "Buscar",
@@ -17,30 +17,27 @@
     "warning": "Advertencia",
     "info": "Información"
   },
+  "home": {
+    "title": "Inicio",
+    "subtitle": "Bienvenido a la aplicación de pensamientos.",
+    "welcome": "Esta aplicación te permite crear, editar y gestionar tus pensamientos.",
+    "cta": "Comenzar"
+  },
   "flashcards": {
-    "title": "Tarjetas de Memoria",
-    "subtitle": "Página de demostración con store Zustand.",
-    "newCard": "Nueva tarjeta",
-    "frontSide": "Frente",
-    "backSide": "Reverso",
-    "editCard": "Editar tarjeta",
-    "deleteCard": "Eliminar tarjeta",
-    "deleteConfirm": "¿Estás seguro de que quieres eliminar esta tarjeta?",
-    "noCards": "No hay tarjetas de memoria",
-    "noCardsDescription": "Comienza agregando tu primera tarjeta de memoria.",
-    "welcome": "Bienvenido a la aplicación de tarjetas de memoria. Esta aplicación te permite crear, editar y gestionar tus tarjetas de memoria para el aprendizaje.",
+    "title": "Pensamientos",
+    "subtitle": "Almacena tus pensamientos de forma sencilla.",
     "emptyState": {
-      "title": "No hay tarjetas de memoria",
-      "description": "Comienza agregando tu primera tarjeta de memoria."
+      "title": "No hay pensamientos",
+      "description": "Comienza agregando tu primer pensamiento."
     },
     "noMatches": {
       "title": "No hay coincidencias",
-      "description": "No se encontraron tarjetas de memoria."
+      "description": "No se encontraron pensamientos."
     }
   },
   "newFlashcard": {
     "placeholder": "¿Qué estás pensando?",
-    "addNewCard": "Agregar una nueva tarjeta de memoria"
+    "addNewCard": "Agregar un nuevo pensamiento"
   },
   "sidebar": {
     "title": "Barra lateral",
@@ -51,7 +48,7 @@
   },
   "flashcards-page": {
     "search": {
-      "placeholder": "Buscar tarjetas de memoria"
+      "placeholder": "Buscar pensamientos"
     },
     "clearFilters": "Limpiar filtros",
     "alerts": {
@@ -62,7 +59,7 @@
     "delete": "Eliminar"
   },
   "metadata": {
-    "title": "Tarjetas de Memoria",
-    "description": "Aplicación de tarjetas de memoria con Next.js y Zustand"
+    "title": "Pensamientos",
+    "description": "Aplicación de pensamientos con Next.js y Zustand"
   }
 }

@@ -1,4 +1,5 @@
 import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -13,6 +14,8 @@ interface AppBreadcrumbProps {
 }
 
 export function AppBreadcrumb({ routes }: AppBreadcrumbProps) {
+  const t = useTranslations();
+
   const breadcrumbItems = routes.flatMap((route) => [
     <BreadcrumbSeparator key={route.href + "separator"} />,
     <BreadcrumbItem key={route.href}>
@@ -30,7 +33,7 @@ export function AppBreadcrumb({ routes }: AppBreadcrumbProps) {
         <BreadcrumbList>
           <BreadcrumbItem>
             <BreadcrumbLink asChild>
-              <Link href="/">Home</Link>
+              <Link href="/">{t("navigation.home")}</Link>
             </BreadcrumbLink>
           </BreadcrumbItem>
           {breadcrumbItems}

@@ -1,34 +1,30 @@
 import { useTranslations } from "next-intl";
 import { AppBreadcrumb } from "@/components/common/app-breadcrumb";
 import { Text } from "@/components/common/text";
-import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/common/button";
+import { Link } from "@/i18n/navigation";
 
 export default function Home() {
   const t = useTranslations();
 
   return (
     <div className="p-4 w-full">
-      <AppBreadcrumb
-        routes={[{ href: "/", label: t("navigation.flashcards") }]}
-      />
+      <AppBreadcrumb routes={[]} />
 
       <Text variant="heading" asChild>
-        <h1>{t("flashcards.title")}</h1>
+        <h1>{t("home.title")}</h1>
       </Text>
-      <Text variant="subheading">{t("flashcards.subtitle")}</Text>
+      <Text variant="subheading">{t("home.subtitle")}</Text>
 
-      <div className="mt-8 space-y-4">
-        <Text variant="default">{t("flashcards.welcome")}</Text>
+      <Text className="mt-8" variant="default">
+        {t("home.welcome")}
+      </Text>
 
-        <div className="flex gap-4">
-          <Button asChild>
-            <Link href="/demo-zustand">
-              {t("common.add")} {t("flashcards.title")}
-            </Link>
-          </Button>
-        </div>
-      </div>
+      <Button asChild className="mt-4">
+        <Link href="/thoughts">
+          {t("home.cta")}
+        </Link>
+      </Button>
     </div>
   );
 }

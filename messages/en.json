@@ -1,7 +1,7 @@
 {
   "navigation": {
-    "demoZustand": "Demo Zustand",
-    "flashcards": "Flashcards"
+    "thoughts": "Thoughts",
+    "home": "Home"
   },
   "common": {
     "search": "Search",
@@ -17,30 +17,27 @@
     "warning": "Warning",
     "info": "Information"
   },
+  "home": {
+    "title": "Home",
+    "subtitle": "Welcome to the thoughts application.",
+    "welcome": "This application allows you to create, edit and manage your thoughts.",
+    "cta": "Get started"
+  },
   "flashcards": {
-    "title": "Flashcards",
-    "subtitle": "Demo page with Zustand store.",
-    "newCard": "New card",
-    "frontSide": "Front",
-    "backSide": "Back",
-    "editCard": "Edit card",
-    "deleteCard": "Delete card",
-    "deleteConfirm": "Are you sure you want to delete this card?",
-    "noCards": "No flashcards",
-    "noCardsDescription": "Start by adding your first flashcard.",
-    "welcome": "Welcome to the flashcard application. This application allows you to create, edit and manage your flashcards for learning.",
+    "title": "Thoughts",
+    "subtitle": "Store your thoughts in a simple way.",
     "emptyState": {
-      "title": "No flashcards",
-      "description": "Start by adding your first flashcard."
+      "title": "No thoughts",
+      "description": "Start by adding your first thought."
     },
     "noMatches": {
       "title": "No matches",
-      "description": "No flashcards found."
+      "description": "No thoughts found."
     }
   },
   "newFlashcard": {
     "placeholder": "What are you thinking?",
-    "addNewCard": "Add a new flashcard"
+    "addNewCard": "Add a new thought"
   },
   "sidebar": {
     "title": "Sidebar",
@@ -51,7 +48,7 @@
   },
   "flashcards-page": {
     "search": {
-      "placeholder": "Search flashcards"
+      "placeholder": "Search thoughts"
     },
     "clearFilters": "Clear filters",
     "alerts": {
@@ -62,7 +59,7 @@
     "delete": "Delete"
   },
   "metadata": {
-    "title": "Flashcards",
-    "description": "Flashcard application with Next.js and Zustand"
+    "title": "Thoughts",
+    "description": "Thoughts application with Next.js and Zustand"
   }
 }
