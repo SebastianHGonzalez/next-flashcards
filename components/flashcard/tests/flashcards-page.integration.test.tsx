@@ -30,6 +30,7 @@ describe("FlashcardsPage", () => {
         });
       },
     ],
+    // TODO: Add tests for this page under different store implementations
   ])("%s", (_, TestComponent, hydrateStore) => {
     it("should render without crashing", () => {
       render(<TestComponent />);
