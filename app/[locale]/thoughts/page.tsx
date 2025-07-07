@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useFlashcards } from "@/hooks/zustand/useFlashcards";
+import { useFlashcards } from "@/hooks/flashcards/useFlashcards";
 import { AppBreadcrumb } from "@/components/common/app-breadcrumb";
 import { Text } from "@/components/common/text";
 import { FlashcardsPage } from "@/components/flashcard/flashcards-page";

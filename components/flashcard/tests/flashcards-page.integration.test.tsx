@@ -1,7 +1,7 @@
 import {
   useFlashcards as useZustandFlashcards,
   useFlashcardsStore as useZustandFlashcardsStore,
-} from "@/hooks/zustand/useFlashcards";
+} from "@/hooks/flashcards/useFlashcards";
 import { FlashcardsStore } from "@/model/flashcard";
 import { act, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -154,11 +154,9 @@ describe("FlashcardsPage", () => {
     it("should clear filters", async () => {
       const user = userEvent.setup();
 
-      const {
-        getByText,
-        getByPlaceholderText,
-        queryByDisplayValue,
-      } = render(<TestComponent />);
+      const { getByText, getByPlaceholderText, queryByDisplayValue } = render(
+        <TestComponent />
+      );
 
       hydrateStore({
         allFlashcards: [
