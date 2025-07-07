@@ -11,8 +11,8 @@ import { FlashcardBase } from "./flashcard-base";
 
 interface FlashcardProps {
   flashcard: FlashcardDetails;
-  onUpdate: (details: UpdateFlashcard) => void;
-  onDelete: (details: DeleteFlashcard) => void;
+  onUpdate: (details: UpdateFlashcard) => Promise<void>;
+  onDelete: (details: DeleteFlashcard) => Promise<void>;
 }
 
 export function Flashcard({ flashcard, onUpdate, onDelete }: FlashcardProps) {
@@ -29,9 +29,15 @@ export function Flashcard({ flashcard, onUpdate, onDelete }: FlashcardProps) {
           onEditStart={() => setIsEditing(true)}
           onEdit={(text) => setFront(text)}
           onEditEnd={(text) => {
-            onUpdate({ ...flashcard, front: text });
-            setIsEditing(false);
-            setFront(text);
+            onUpdate({ ...flashcard, front: text })
+              .then(() => {
+                setIsEditing(false);  
+                setFront(text);
+              })
+              .catch(() => {
+                setFront(flashcard.front);
+                setIsEditing(false);
+              });
           }}
           onEditCancel={() => {
             setIsEditing(false);

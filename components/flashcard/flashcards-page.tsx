@@ -8,7 +8,7 @@ import {
   FlashcardListNoMatches,
 } from "@/components/flashcard/flashcard-list";
 import { NewFlashcard } from "@/components/flashcard/new-flashcard";
-import { Alert, AlertDescription, AlertTitle } from "@/components/common/alert";
+import { Alert, AlertDescription, AlertDismiss, AlertTitle } from "@/components/common/alert";
 import { AlertCircle } from "lucide-react";
 import { ActivityIndicator } from "@/components/common/activity-indicator";
 import { Button } from "@/components/common/button";
@@ -32,6 +32,7 @@ export function FlashcardsPage({ store }: { store: FlashcardsStore }) {
           <AlertCircle />
           <AlertTitle>{t("alerts.headsUp")}</AlertTitle>
           <AlertDescription>{store.error}</AlertDescription>
+          <AlertDismiss onClick={store.dismissError} />
         </Alert>
       )}
 

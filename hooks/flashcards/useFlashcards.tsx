@@ -21,12 +21,14 @@ export const useFlashcardsStore = create<FlashcardsStore>()(
         textFilter: "",
 
         addFlashcard: async (flashcard) => {
+          set({ error: null });
+
           const { data: newFlashcard, error } =
             createFlashcardSchema.safeParse(flashcard);
 
           if (error) {
             set({ error: error.errors.at(0)?.message ?? null });
-            return;
+            throw error;
           }
 
           set((state) => ({
@@ -38,12 +40,14 @@ export const useFlashcardsStore = create<FlashcardsStore>()(
           }));
         },
         updateFlashcard: async (flashcard) => {
+          set({ error: null });
+
           const { data: updatedFlashcard, error } =
             updateFlashcardSchema.safeParse(flashcard);
 
           if (error) {
             set({ error: error.errors.at(0)?.message });
-            return;
+            throw error;
           }
 
           const existingFlashcard = get().allFlashcards.find(
@@ -62,12 +66,14 @@ export const useFlashcardsStore = create<FlashcardsStore>()(
           }));
         },
         deleteFlashcard: async (flashcard) => {
+          set({ error: null });
+
           const { data: deletedFlashcard, error } =
             deleteFlashcardSchema.safeParse(flashcard);
 
           if (error) {
             set({ error: error.errors.at(0)?.message });
-            return;
+            throw error;
           }
 
           set((state) => ({
@@ -79,6 +85,9 @@ export const useFlashcardsStore = create<FlashcardsStore>()(
         },
         setTextFilter: (text) => {
           set({ textFilter: text });
+        },
+        dismissError: () => {
+          set({ error: null });
         },
       }),
       {

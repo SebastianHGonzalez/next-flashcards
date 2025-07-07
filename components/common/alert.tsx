@@ -1,7 +1,7 @@
-import * as React from "react"
-import { cva, type VariantProps } from "class-variance-authority"
-
 import { cn } from "@/lib/utils"
+import { cva, type VariantProps } from "class-variance-authority"
+import { X } from "lucide-react"
+import * as React from "react"
 
 const alertVariants = cva(
   "relative w-full rounded-lg border px-4 py-3 text-sm grid has-[>svg]:grid-cols-[calc(var(--spacing)*4)_1fr] grid-cols-[0_1fr] has-[>svg]:gap-x-3 gap-y-0.5 items-start [&>svg]:size-4 [&>svg]:translate-y-0.5 [&>svg]:text-current",
@@ -28,7 +28,7 @@ function Alert({
     <div
       data-slot="alert"
       role="alert"
-      className={cn(alertVariants({ variant }), className)}
+      className={cn("relative", alertVariants({ variant }), className)}
       {...props}
     />
   )
@@ -63,4 +63,13 @@ function AlertDescription({
   )
 }
 
-export { Alert, AlertTitle, AlertDescription }
+function AlertDismiss({ className, ...props }: React.ComponentProps<"button">) {
+  return (
+    <button type="button" className={cn("absolute right-2 top-2", className)} {...props}>
+      <X className="size-4" />
+    </button>
+  )
+}
+
+export { Alert, AlertDescription, AlertDismiss, AlertTitle }
+

@@ -41,13 +41,13 @@ export function NewFlashcard({ onAdd, className }: NewFlashcardProps) {
             onEditStart={() => setIsEditing(true)}
             onEdit={(text) => setFront(text)}
             onEditEnd={(text) => {
+              setIsEditing(false);
+              setFront("");
               if (!text) return;
 
               const randomColor =
                 colorOptions[Math.floor(Math.random() * colorOptions.length)];
               onAdd({ front: text, frontColor: randomColor });
-              setIsEditing(false);
-              setFront("");
             }}
             onEditCancel={() => setIsEditing(false)}
           />

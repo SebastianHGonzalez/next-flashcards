@@ -26,6 +26,7 @@ export type FlashcardsStore = {
     flashcards: FlashcardDetails[];
     loading: boolean;
     error: string | null;
+    dismissError: () => void;
 
     addFlashcard: (flashcard: CreateFlashcard) => Promise<void>;
     updateFlashcard: (flashcard: UpdateFlashcard) => Promise<void>;
