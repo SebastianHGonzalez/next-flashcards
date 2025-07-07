@@ -11,7 +11,7 @@ import { LanguageSwitcher } from "./language-switcher";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { usePathname } from "next/navigation";
-import { Home, CreditCard } from "lucide-react";
+import { Home, NotepadText } from "lucide-react";
 
 export function AppSidebar() {
   const t = useTranslations();
@@ -32,7 +32,7 @@ export function AppSidebar() {
           </SidebarMenuButton>
           <SidebarMenuButton asChild isActive={pathname === "/thoughts"}>
             <Link href="/thoughts">
-              <CreditCard className="w-4 h-4" />
+              <NotepadText className="w-4 h-4" />
               {t("navigation.thoughts")}
             </Link>
           </SidebarMenuButton>

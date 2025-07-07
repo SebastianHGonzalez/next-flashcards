@@ -1,6 +1,6 @@
 {
   "navigation": {
-    "thoughts": "Pensamientos",
+    "thoughts": "Frases",
     "home": "Inicio"
   },
   "common": {
@@ -19,25 +19,25 @@
   },
   "home": {
     "title": "Inicio",
-    "subtitle": "Bienvenido a la aplicación de pensamientos.",
-    "welcome": "Esta aplicación te permite crear, editar y gestionar tus pensamientos.",
+    "subtitle": "Bienvenido a la aplicación de frases.",
+    "welcome": "Esta aplicación te permite crear, editar y gestionar tus frases.",
     "cta": "Comenzar"
   },
   "flashcards": {
-    "title": "Pensamientos",
-    "subtitle": "Almacena tus pensamientos de forma sencilla.",
+    "title": "Frases",
+    "subtitle": "Almacena tus frases de forma sencilla.",
     "emptyState": {
-      "title": "No hay pensamientos",
-      "description": "Comienza agregando tu primer pensamiento."
+      "title": "No hay frases",
+      "description": "Comienza agregando tu primer frase."
     },
     "noMatches": {
       "title": "No hay coincidencias",
-      "description": "No se encontraron pensamientos."
+      "description": "No se encontraron frases."
     }
   },
   "newFlashcard": {
     "placeholder": "¿Qué estás pensando?",
-    "addNewCard": "Agregar un nuevo pensamiento"
+    "addNewCard": "Agregar un nuevo frase"
   },
   "sidebar": {
     "title": "Barra lateral",
@@ -48,7 +48,7 @@
   },
   "flashcards-page": {
     "search": {
-      "placeholder": "Buscar pensamientos"
+      "placeholder": "Buscar frases"
     },
     "clearFilters": "Limpiar filtros",
     "alerts": {
@@ -59,7 +59,7 @@
     "delete": "Eliminar"
   },
   "metadata": {
-    "title": "Pensamientos",
-    "description": "Aplicación de pensamientos con Next.js y Zustand"
+    "title": "Frases",
+    "description": "Aplicación de frases con Next.js y Zustand"
   }
 }
